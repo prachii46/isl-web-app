@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "tailwindcss";
-
 body {
   margin: 0;
-  background-color: #020617 !important; /* Slate-950 basic background hex anchor */
+  background-color: #020617 !important;
   color: #f8fafc !important;
 }
 

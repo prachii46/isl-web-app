@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
-import LectureView from './components/LectureView'; // ⬅️ NEW SCREEN IMPORT
 import Workspace from './components/Workspace';
 import { ISL_QUIZZES } from './data/quizData';
 
 export default function App() {
-  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard', 'lecture', or 'quiz'
+  const [currentScreen, setCurrentScreen] = useState('dashboard');
   const [activeLesson, setActiveLesson] = useState(null);
 
+  // Clean, responsive app state metrics
   const [userStats, setUserStats] = useState({
     displayName: "Rohan Kumar",
     xp: 0,
@@ -16,9 +16,10 @@ export default function App() {
   });
 
   const launchLessonFlow = (lessonId) => {
+    // If the clicked node has data in quizData.js, use it. Otherwise, default to greetings-1.
     const verifiedId = ISL_QUIZZES[lessonId] ? lessonId : "greetings-1";
-    setActiveLesson(lessonId);
-    setCurrentScreen('quiz');
+    setActiveLesson(verifiedId);
+    setCurrentScreen('quiz'); // Head straight to the workspace game!
   };
 
   const handleLessonComplete = (lessonId, xpReward) => {
@@ -35,19 +36,9 @@ export default function App() {
 
   return (
     <>
-      {currentScreen === 'dashboard' && (
+      {currentScreen === 'dashboard' ? (
         <Dashboard userStats={userStats} onLessonNodeClick={launchLessonFlow} />
-      )}
-      
-      {currentScreen === 'lecture' && (
-        <LectureView 
-          lessonId={activeLesson}
-          onStartQuiz={() => setCurrentScreen('quiz')} // 📍 ROUTE TO QUIZ NEXT!
-          onBackToDashboard={() => setCurrentScreen('dashboard')}
-        />
-      )}
-
-      {currentScreen === 'quiz' && (
+      ) : (
         <Workspace 
           lessonId={activeLesson} 
           onLessonPassed={handleLessonComplete}
