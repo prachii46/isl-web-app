@@ -21,9 +21,9 @@ export const ISL_QUIZZES = {
     lessonId: "numbers-1",
     title: "Module 3.1: Numbers 1-10",
     videoUrl: "/videos/numbers.mp4", 
-    question: "When signing cardinal digits between 1 and 5, what structural modification does the interpreter make to separate them from 6 to 10?",
-    options: ["Utilizing both hands together", "It's the same as finger-counting " , "Turning the palm backward", "Touching the chest surface"],
-    correctAnswer: "It's the same as finger-counting ", // 📍 Hidden in Option 2
+    question: "When signing digits between 1 and 5 which everday practice is it similar to?",
+    options: ["Dumb charades", "Finger-counting " , "SOS message", "Greeting with hand gestures"],
+    correctAnswer: "Finger-counting ", // 📍 Hidden in Option 2
     explanation: "While single-digit integers 1-5 utilize individual finger projections on one dominant hand how we normally do for finger-counting, values 6-10 requires a bit more complex gestures."
   },
   "greetings-1": {
@@ -40,8 +40,8 @@ export const ISL_QUIZZES = {
     title: "Module 5.4: Emotions",
     videoUrl: "/videos/emotions.mp4", 
     question: "What facial marker accompanying the manual gesture for 'Happy' is strictly highlighted to denote optimistic expression?",
-    options: ["A relaxed smile posture", "Rapid blinking sequences", "Closed eyes with head tilted", "Widened eyes and tense jaw"],
-    correctAnswer: "A relaxed smile posture", // 📍 Hidden in Option 1
+    options: ["A bright smile posture", "Rapid blinking sequences", "Closed eyes with head tilted", "Widened eyes and tense jaw"],
+    correctAnswer: "A bright smile posture", // 📍 Hidden in Option 1
     explanation: "Happy expressions require clear non-manual markers (facial affect changes) alongside manual signatures to denote being happy and showing a postive emotion."
   }
 };
